@@ -1,4 +1,22 @@
 produtos = [
-    {"id": 1, "nome": "Produto A", "preco": 10.0, "estoque": 10},
-    {"id": 2, "nome": "Produto B", "preco": 20.0, "estoque": 10}
+    {"id": 1, "nome": "Fone de Ouvido Bluetooth Wireless", "preco": 85.99, "estoque": 25},
+    {"id": 2, "nome": "Mouse Gamer com Fio RGB", "preco": 65.90, "estoque": 40},
+    {"id": 3, "nome": "Teclado Mecânico RGB", "preco": 350.00, "estoque": 18},
+    {"id": 4, "nome": "Monitor LED 24\" Full HD", "preco": 599.99, "estoque": 12},
+    {"id": 5, "nome": "SSD 480GB SATA", "preco": 189.90, "estoque": 22},
+    {"id": 6, "nome": "Carregador USB-C Rápido 65W", "preco": 85.50, "estoque": 32},
+    {"id": 7, "nome": "Webcam Full HD 1080p", "preco": 199.99, "estoque": 15},
+    {"id": 8, "nome": "Headset Gamer 7.1 Surround", "preco": 220.00, "estoque": 14},
+    {"id": 9, "nome": "Mousepad Gamer RGB Grande", "preco": 45.00, "estoque": 28},
+    {"id": 10, "nome": "Hub USB 3.0 7 Portas", "preco": 75.00, "estoque": 20},
+    {"id": 11, "nome": "Memória RAM DDR4 8GB", "preco": 120.00, "estoque": 16},
+    {"id": 12, "nome": "Processador Cooler", "preco": 45.90, "estoque": 30},
+    {"id": 13, "nome": "Cabo HDMI 2.1 4K", "preco": 35.00, "estoque": 35},
+    {"id": 14, "nome": "Fonte ATX 500W Real", "preco": 250.00, "estoque": 10},
+    {"id": 15, "nome": "Cooler para Processador Intel", "preco": 78.00, "estoque": 19},
+    {"id": 16, "nome": "Gabinete Gamer Tempered Glass", "preco": 299.90, "estoque": 8},
+    {"id": 17, "nome": "Placa de Vídeo GTX 1650", "preco": 1200.00, "estoque": 6},
+    {"id": 18, "nome": "SSD NVMe 1TB", "preco": 399.99, "estoque": 11},
+    {"id": 19, "nome": "Cabo de Rede Cat6 10 Metros", "preco": 42.50, "estoque": 25},
+    {"id": 20, "nome": "Mochila para Notebook 17 Polegadas", "preco": 145.00, "estoque": 17}
 ]
