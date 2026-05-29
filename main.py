@@ -1,15 +1,9 @@
-import os
-import sys
-from time import sleep
 from utils.clean import _limpar
-from data.produtos import produtos
-from utils.menu import _menu, _sobre
-
+from utils.menu import _menu
 
 _limpar()
-sleep(2)
-print(f"{'-'*30}\n{'BEM-VINDO A NOSSA LOJA':^30}\n{'-'*30}")
+print('-' * 35)
+print('BEM-VINDO A NOSSA LOJA'.center(35))
+print('-' * 35)
 
 _menu()
-
-

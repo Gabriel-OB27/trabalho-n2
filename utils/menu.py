@@ -1,56 +1,127 @@
-def _menu():
-    from main import _limpar
-    from data.produtos import produtos
-    from data.clientes import clientes
-    
+from utils.clean import _limpar
+from utils.helpers import cabecalho, pausar
+
+from data.produtos import produtos
+from data.clientes import clientes
+from data.pedidos import pedidos
+
+from lib.cadastro import cadastrar_produto, cadastrar_cliente, cadastrar_pedido
+from lib.listagem import listar_produtos, listar_clientes, listar_pedidos
+from lib.atualizacao import atualizar_produto, atualizar_cliente
+from lib.remocao import remover_produto, remover_cliente, remover_pedido
+
+
+def _menu_produtos():
     while True:
-        _limpar()
-        print(f"{'-'*30}\n{'MENU PRINCIPAL':^30}\n{'-'*30}")
-        print(f"Para iniciar, selecione uma opção:")
-        print("1 - Ver produtos disponíveis")
-        print("2 - Ver clientes cadastrados")
-        print("3 - Sobre nós")
-        print("0 - Sair do sistema")
-        opcao = input("\nDigite o número da opção desejada: ")
-        
+        cabecalho('PRODUTOS')
+        print('1 - Listar produtos')
+        print('2 - Cadastrar produto')
+        print('3 - Atualizar produto')
+        print('4 - Remover produto')
+        print('0 - Voltar')
+
+        opcao = input('\nOpcao: ')
+
         match opcao:
-            case "1":
-                _limpar()
-                print(f"{'-'*30}\n{'PRODUTOS DISPONÍVEIS':^30}\n{'-'*30}")
-                for produto in produtos:
-                    print(f"{produto['id']}: {produto['nome']} - R${produto['preco']:.2f} - Estoque: {produto['estoque']}")
-                input("\nPressione ENTER para voltar ao menu...")
-                
-            case "2":
-                _limpar()
-                print(f"{'-'*30}\n{'CLIENTES CADASTRADOS':^30}\n{'-'*30}")
-                for cliente in clientes:
-                    print(f"{cliente['id']}: {cliente['nome']} - {cliente['email']} - CPF: {cliente['cpf']}")
-                input("\nPressione ENTER para voltar ao menu...")
-                
-            case "3":
-                _limpar()
-                _sobre()
-                input("\nPressione ENTER para voltar ao menu...")
-                
-            case "0":
-                _limpar()
-                print("Obrigado por usar nosso sistema! Até logo!")
+            case '1':
+                listar_produtos(produtos)
+            case '2':
+                cadastrar_produto(produtos)
+            case '3':
+                atualizar_produto(produtos)
+            case '4':
+                remover_produto(produtos)
+            case '0':
                 break
-                
             case _:
-                print("Opção inválida! Digite um número entre 0 e 3.")
-                input("Pressione ENTER para tentar novamente...")
+                print('Opcao invalida.')
+                pausar()
+
+
+def _menu_clientes():
+    while True:
+        cabecalho('CLIENTES')
+        print('1 - Listar clientes')
+        print('2 - Cadastrar cliente')
+        print('3 - Atualizar cliente')
+        print('4 - Remover cliente')
+        print('0 - Voltar')
+
+        opcao = input('\nOpcao: ')
+
+        match opcao:
+            case '1':
+                listar_clientes(clientes)
+            case '2':
+                cadastrar_cliente(clientes)
+            case '3':
+                atualizar_cliente(clientes)
+            case '4':
+                remover_cliente(clientes)
+            case '0':
+                break
+            case _:
+                print('Opcao invalida.')
+                pausar()
+
+
+def _menu_pedidos():
+    while True:
+        cabecalho('PEDIDOS')
+        print('1 - Listar pedidos')
+        print('2 - Registrar pedido')
+        print('3 - Remover pedido')
+        print('0 - Voltar')
+
+        opcao = input('\nOpcao: ')
+
+        match opcao:
+            case '1':
+                listar_pedidos(pedidos)
+            case '2':
+                cadastrar_pedido(pedidos, clientes, produtos)
+            case '3':
+                remover_pedido(pedidos, produtos)
+            case '0':
+                break
+            case _:
+                print('Opcao invalida.')
+                pausar()
 
 
 def _sobre():
-    print(f"{'-'*30}\n{'SOBRE NÓS':^30}\n{'-'*30}")
-    print('''Somos uma loja de tecnologia especializada em periféricos e componentes para computadores.
-Oferecemos uma ampla variedade de produtos, desde fones de ouvido Bluetooth até
-placas de vídeo de última geração. Nossa missão é fornecer aos nossos clientes os melhores
-produtos com preços competitivos e um atendimento excepcional. Explore nosso catálogo e
-encontre o que você precisa para aprimorar sua experiência tecnológica!''')
+    cabecalho('SOBRE NOS')
+    print('Loja de tecnologia especializada em')
+    print('perifericos e componentes para computadores.')
+    print('\nSistema desenvolvido para fins academicos.')
+    print('Disciplina: Logica de Programacao')
+    pausar()
 
 
-if __name__ == "__main__":
-    _menu()
+def _menu():
+    while True:
+        cabecalho('MENU PRINCIPAL')
+        print('1 - Produtos')
+        print('2 - Clientes')
+        print('3 - Pedidos')
+        print('4 - Sobre nos')
+        print('0 - Sair')
+
+        opcao = input('\nOpcao: ')
+
+        match opcao:
+            case '1':
+                _menu_produtos()
+            case '2':
+                _menu_clientes()
+            case '3':
+                _menu_pedidos()
+            case '4':
+                _sobre()
+            case '0':
+                _limpar()
+                print('Ate logo!')
+                break
+            case _:
+                print('Opcao invalida.')
+                pausar()
