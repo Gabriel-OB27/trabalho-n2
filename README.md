@@ -11,7 +11,7 @@ como trabalho da disciplina de Lógica de Programação.
 python main.py
 ```
 
-Requer Python 3.10 ou superior (para o `match/case`).
+Requer Python 3 (para o `match/case`).
 
 ---
 
@@ -80,6 +80,6 @@ pedido   = [id, id_cliente, nome_cliente, id_produto, nome_produto, quantidade, 
 
 ## Tecnologias utilizadas
 
-- Python 3.10+
+- Python 3
 - Apenas recursos da linguagem padrão
 - Sem bibliotecas externas, banco de dados ou POO
